@@ -4,6 +4,7 @@ import {
   ScanSearch,
   FileText,
   Download,
+  ArrowRight,
 } from "lucide-react";
 
 const features = [
@@ -11,39 +12,39 @@ const features = [
     icon: Sparkles,
     title: "AI Resume Writing",
     description:
-      "Rewrite your resume with professional, impactful language.",
+      "Rewrite your resume with AI that improves clarity, grammar, impact and professional tone in seconds.",
   },
   {
     icon: ScanSearch,
     title: "ATS Optimization",
     description:
-      "Improve compatibility with Applicant Tracking Systems.",
+      "Boost your ATS score with smart keyword suggestions and recruiter-friendly formatting.",
   },
   {
     icon: FileText,
     title: "Modern Templates",
     description:
-      "Choose from clean, recruiter-friendly resume designs.",
+      "Choose from beautiful, ATS-friendly templates designed to impress recruiters.",
   },
   {
     icon: Download,
     title: "One-Click PDF Export",
     description:
-      "Download your resume instantly in a professional PDF format.",
+      "Export your resume instantly as a clean, professional PDF ready for job applications.",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="bg-slate-50 py-28">
+    <section className="bg-gradient-to-b from-slate-50 to-white py-32">
       <div className="mx-auto max-w-7xl px-6">
 
         <SectionHeading
           title="Everything You Need To Get Hired"
-          subtitle="Powerful AI tools combined with professional resume building to help you stand out."
+          subtitle="Powerful AI tools combined with professional resume building to help you stand out from thousands of applicants."
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
 
           {features.map((feature) => {
             const Icon = feature.icon;
@@ -51,19 +52,35 @@ export default function Features() {
             return (
               <div
                 key={feature.title}
-                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className="mb-6 inline-flex rounded-2xl bg-blue-100 p-4 text-blue-600">
+                {/* Icon */}
+                <div className="mb-8 inline-flex rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-4 text-white shadow-lg">
+
                   <Icon size={30} />
+
                 </div>
 
-                <h3 className="text-2xl font-bold">
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-slate-900">
                   {feature.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-slate-600">
+                {/* Description */}
+                <p className="mt-5 leading-8 text-slate-600">
                   {feature.description}
                 </p>
+
+                {/* Arrow */}
+                <div className="mt-8 flex justify-end">
+
+                  <ArrowRight
+                    size={22}
+                    className="text-slate-400 transition-all duration-300 group-hover:translate-x-2 group-hover:text-blue-600"
+                  />
+
+                </div>
+
               </div>
             );
           })}

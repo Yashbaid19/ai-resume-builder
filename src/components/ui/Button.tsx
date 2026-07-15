@@ -8,7 +8,7 @@ export default function Button({
   variant = "primary",
 }: ButtonProps) {
   const baseStyle =
-    "rounded-xl px-6 py-3 font-semibold transition duration-200";
+    "rounded-xl px-8 h-14 font-semibold transition duration-200";
 
   const variants = {
     primary:
